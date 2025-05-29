@@ -152,7 +152,7 @@
       <div class="pricing-card">
         <h3>Pequenos Negócios</h3>
         <div class="price">R$49/mês</div>
-        <button>Comece agora</button>
+        <button data-scroll-to="contato">Tenho interesse</button>
         <ul>
           <li>Integração com sistemas populares</li>
           <li>Atualizações automáticas</li>
@@ -163,7 +163,7 @@
       <div class="pricing-card">
         <h3>ERPs</h3>
         <div class="price">R$199/mês</div>
-        <button>Contratar</button>
+        <button data-scroll-to="contato">Tenho interesse</button>
         <ul>
           <li>API completa para integração</li>
           <li>Consultoria de implementação</li>
@@ -174,7 +174,7 @@
       <div class="pricing-card">
         <h3>Enterprise</h3>
         <div class="price">Sob consulta</div>
-        <button class="contact">Falar com vendas</button>
+        <button data-scroll-to="contato">Tenho interesse</button>
         <ul>
           <li>Customização total do sistema</li>
           <li>Gestor de conta dedicado</li>
@@ -183,6 +183,31 @@
       </div>
     </div>
   </section>
+  
+	<!-- Adicione após a seção de preços -->
+	<section id="contato" style="padding: 60px 20px; background-color: #f0f0f0;">
+	  <h2 style="text-align: center; margin-bottom: 40px;">Entre em Contato</h2>
+	  <form action="https://formspree.io/f/xgvkgjbb" method="POST" style="max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px;">
+		<input type="text" name="nome" placeholder="Nome" required style="padding: 10px; font-size: 1rem;">
+		<input type="email" name="email" placeholder="E-mail" required style="padding: 10px; font-size: 1rem;">
+		<input type="text" name="whatsapp" placeholder="WhatsApp (opcional)" style="padding: 10px; font-size: 1rem;">
+		<input type="text" name="empresa" placeholder="Empresa" required style="padding: 10px; font-size: 1rem;">
+		<button type="submit" style="padding: 12px; background-color: #004aad; color: white; font-size: 1rem; border: none; border-radius: 5px; cursor: pointer;">Enviar</button>
+	  </form>
+	</section>
+
+	<!-- Scroll suave -->
+	<script>
+	  document.querySelectorAll('button[data-scroll-to]').forEach(btn => {
+		btn.addEventListener('click', () => {
+		  const target = document.getElementById(btn.dataset.scrollTo);
+		  if (target) {
+			target.scrollIntoView({ behavior: 'smooth' });
+		  }
+		});
+	  });
+	</script>
+
 
   <footer>
     <p>© 2025 SuaEmpresa. Visite nosso site: <a href="#">www.suaempresa.com.br</a></p>
